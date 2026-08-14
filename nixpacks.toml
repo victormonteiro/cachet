@@ -1,37 +1,37 @@
 [phases.setup]
 nixPkgs = [
   "...",
-  "php84Packages.composer",
-  "php84Extensions.bcmath",
-  "php84Extensions.bz2",
-  "php84Extensions.calendar",
-  "php84Extensions.dba",
-  "php84Extensions.curl",
-  "php84Extensions.ctype",
-  "php84Extensions.dom",
-  "php84Extensions.enchant",
-  "php84Extensions.exif",
-  "php84Extensions.fileinfo",
-  "php84Extensions.gd",
-  "php84Extensions.gettext",
-  "php84Extensions.gmp",
-  "php84Extensions.iconv",
-  "php84Extensions.imagick",
-  "php84Extensions.imap",
-  "php84Extensions.intl",
-  "php84Extensions.mbstring",
-  "php84Extensions.openssl",
-  "php84Extensions.opcache",
-  "php84Extensions.pdo",
-  "php84Extensions.pdo_mysql",
-  "php84Extensions.pdo_pgsql",
-  "php84Extensions.redis",
-  "php84Extensions.rdkafka",
-  "php84Extensions.tokenizer",
-  "php84Extensions.xml",
-  "php84Extensions.zip",
+  "php83Packages.composer",
+  "php83Extensions.bcmath",
+  "php83Extensions.bz2",
+  "php83Extensions.calendar",
+  "php83Extensions.dba",
+  "php83Extensions.curl",
+  "php83Extensions.ctype",
+  "php83Extensions.dom",
+  "php83Extensions.enchant",
+  "php83Extensions.exif",
+  "php83Extensions.fileinfo",
+  "php83Extensions.gd",
+  "php83Extensions.gettext",
+  "php83Extensions.gmp",
+  "php83Extensions.iconv",
+  "php83Extensions.imagick",
+  "php83Extensions.imap",
+  "php83Extensions.intl",
+  "php83Extensions.mbstring",
+  "php83Extensions.openssl",
+  "php83Extensions.opcache",
+  "php83Extensions.pdo",
+  "php83Extensions.pdo_mysql",
+  "php83Extensions.pdo_pgsql",
+  "php83Extensions.redis",
+  "php83Extensions.rdkafka",
+  "php83Extensions.tokenizer",
+  "php83Extensions.xml",
+  "php83Extensions.zip",
   "imagemagick",
-  "python311Packages.supervisor",
+  "python312Packages.supervisor",
   "nodejs_22",
   "nginx"
 ]
@@ -170,16 +170,6 @@ startsecs=0
 stopwaitsecs=3600
 redirect_stderr=true
 stdout_logfile=/var/log/worker-laravel-schedule.log
-'''
-
-"worker-laravel-reverb.conf" = '''
-[program:worker-laravel-reverb]
-process_name=%(program_name)s_%(process_num)02d
-command=bash -c 'exec php /app/artisan reverb:start'
-autostart=true
-autorestart=true
-redirect_stderr=true
-stdout_logfile=/var/log/worker-laravel-reverb.log
 '''
 
 "php-fpm.conf" = '''
