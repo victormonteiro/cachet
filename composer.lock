@@ -432,20 +432,86 @@
             "time": "2026-06-14T18:21:03+00:00"
         },
         {
+            "name": "cachethq/badger",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cachethq/badger.git",
+                "reference": "0006d174200f4a6108cf389227541ee3015b1319"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cachethq/badger/zipball/0006d174200f4a6108cf389227541ee3015b1319",
+                "reference": "0006d174200f4a6108cf389227541ee3015b1319",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^10.0|^11.0",
+                "pestphp/pest": "^3.0|^4.0",
+                "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cachet\\Badger\\BadgerServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-5.x": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cachet\\Badger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                }
+            ],
+            "description": "A badge generator for Laravel.",
+            "keywords": [
+                "CachetHQ",
+                "badge",
+                "badger",
+                "cachet",
+                "shield",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/cachethq/badger/issues",
+                "source": "https://github.com/cachethq/badger"
+            },
+            "time": "2026-08-12T09:16:20+00:00"
+        },
+        {
             "name": "cachethq/core",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/core.git",
-                "reference": "d627d2201da5285f065ff9a28fe4a693fedeebd6"
+                "reference": "bdbea5d7cd709febe102e7a6cf4d2baed2c24655"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/core/zipball/d627d2201da5285f065ff9a28fe4a693fedeebd6",
-                "reference": "d627d2201da5285f065ff9a28fe4a693fedeebd6",
+                "url": "https://api.github.com/repos/cachethq/core/zipball/bdbea5d7cd709febe102e7a6cf4d2baed2c24655",
+                "reference": "bdbea5d7cd709febe102e7a6cf4d2baed2c24655",
                 "shasum": ""
             },
             "require": {
+                "cachethq/badger": "^5.0",
                 "doctrine/dbal": "^3.6",
                 "ext-simplexml": "*",
                 "filament/filament": "^5.0",
@@ -522,7 +588,7 @@
                 "issues": "https://github.com/cachethq/core/issues",
                 "source": "https://github.com/cachethq/core"
             },
-            "time": "2026-08-11T18:44:19+00:00"
+            "time": "2026-08-13T08:35:13+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
