@@ -38,6 +38,7 @@ nixPkgs = [
 
 [phases.build]
 cmds = [
+    "php /app/artisan vendor:publish --tag=cachet"
     "mkdir -p /var/log /var/log/nginx",
     "mkdir -p /app/bootstrap/cache",
     "chmod -R 755 /app/bootstrap/cache",
