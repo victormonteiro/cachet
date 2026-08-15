@@ -1,35 +1,13 @@
+# PHP extensions do NOT belong here. Nixpacks builds the runtime as
+# `php83.withExtensions (pe: pe.enabled ++ [...])` and fills that list only from
+# the `ext-*` entries in composer.json's require block -- it never reads nixPkgs.
+# Listing `php83Extensions.foo` here fetches the package but never links it into
+# the PHP binary php-fpm runs. To add an extension, require `ext-foo` in
+# composer.json instead. (This is what caused `Class "Redis" not found`.)
 [phases.setup]
 nixPkgs = [
   "...",
   "php83Packages.composer",
-  "php83Extensions.bcmath",
-  "php83Extensions.bz2",
-  "php83Extensions.calendar",
-  "php83Extensions.dba",
-  "php83Extensions.curl",
-  "php83Extensions.ctype",
-  "php83Extensions.dom",
-  "php83Extensions.enchant",
-  "php83Extensions.exif",
-  "php83Extensions.fileinfo",
-  "php83Extensions.gd",
-  "php83Extensions.gettext",
-  "php83Extensions.gmp",
-  "php83Extensions.iconv",
-  "php83Extensions.imagick",
-  "php83Extensions.imap",
-  "php83Extensions.intl",
-  "php83Extensions.mbstring",
-  "php83Extensions.openssl",
-  "php83Extensions.opcache",
-  "php83Extensions.pdo",
-  "php83Extensions.pdo_mysql",
-  "php83Extensions.pdo_pgsql",
-  "php83Extensions.redis",
-  "php83Extensions.rdkafka",
-  "php83Extensions.tokenizer",
-  "php83Extensions.xml",
-  "php83Extensions.zip",
   "imagemagick",
   "python312Packages.supervisor",
   "nodejs_22",
@@ -89,7 +67,7 @@ php artisan icons:cache
 
 # Customers-only containers serve the web panel only (no queue workers)
 if [[ "${IS_CUSTOMERS_ONLY}" == "true" ]]; then
-  rm -f /etc/supervisor/conf.d/worker-laravel-horizon.conf
+  rm -f /etc/supervisor/conf.d/worker-laravel.conf
 fi
 
 # Start supervisor (manages nginx, php-fpm, queues)
