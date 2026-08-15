@@ -38,7 +38,6 @@ nixPkgs = [
 
 [phases.build]
 cmds = [
-    "npm run build",
     "mkdir -p /var/log /var/log/nginx",
     "mkdir -p /app/bootstrap/cache",
     "chmod -R 755 /app/bootstrap/cache",
